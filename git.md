@@ -45,3 +45,35 @@ Version control offers more than just a static archive of past versions, though:
   release builds.
     * As a corollary, this is extremely useful in a classroom setting where
     it is imperative to always have *something* to turn in which builds.
+
+---
+
+# How do you use git?
+
+There are a lot of tools to learn, but the basic structure is always:
+
+    $ git COMMAND [OPTIONS...]
+
+Where COMMAND is usually a verb, like 'clone', 'add', 'commit', 'push', etc.
+
+The workflow is usually:
+
+* Work
+    * `$EDITOR $FILES`
+* Commit
+    * `git add $FILES`
+    * `git commit -m "$MESSAGE"`
+* Repeat
+
+---
+
+# An example
+
+    $ git init project
+    $ cd project
+    $ echo 'echo Hello git!' >> main.sh
+    $ git add main.sh
+    $ git commit -m "add main script"
+    $ chmod +x main.sh
+    $ git add main.sh
+    $ git commit -m "make main script executable"

@@ -67,7 +67,7 @@ The workflow is usually:
 
 ---
 
-# An example
+# A local example
 
     $ git init project
     $ cd project

@@ -77,3 +77,16 @@ The workflow is usually:
     $ chmod +x main.sh
     $ git add main.sh
     $ git commit -m "make main script executable"
+
+---
+
+# Distributed
+
+Git is *distributed*, which means that most of the operations you do are on
+a *local copy* of the project tree.
+
+There are only a handful of git commands which communicate over the network,
+including things like `clone`, `push`, `pull`, `fetch`, etc.
+
+This means you can work from *anywhere*, and not need to worry about
+synchronizing changes with remotes until you get back on the network.

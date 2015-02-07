@@ -90,3 +90,25 @@ including things like `clone`, `push`, `pull`, `fetch`, etc.
 
 This means you can work from *anywhere*, and not need to worry about
 synchronizing changes with remotes until you get back on the network.
+
+---
+
+# The three stores
+
+Your work is somewhere, but *where*, you might ask?
+
+There are three places where objects exist at any given time:
+
+* The *working directory* (where you do your work)
+* The *cache/index* (where you stage changes to be committed)
+* The *repository* (committed revisions)
+
+You can move objects between these three stores in various ways:
+
+(Working Directory) (Staging Area) (Repository)
+        |               |               |
+        <-------------Checkout----------+
+        |               |               |
+        +-----Stage----->               |
+                        |               |
+                        +----Commit----->

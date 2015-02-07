@@ -80,19 +80,6 @@ The workflow is usually:
 
 ---
 
-# Distributed
-
-Git is *distributed*, which means that most of the operations you do are on
-a *local copy* of the project tree.
-
-There are only a handful of git commands which communicate over the network,
-including things like `clone`, `push`, `pull`, `fetch`, etc.
-
-This means you can work from *anywhere*, and not need to worry about
-synchronizing changes with remotes until you get back on the network.
-
----
-
 # The three stores
 
 Your work is somewhere, but *where*, you might ask?
@@ -112,3 +99,41 @@ You can move objects between these three stores in various ways:
         +-----Stage----->               |
                         |               |
                         +----Commit----->
+
+---
+
+# Distributed
+
+Git is *distributed*, which means that most of the operations you do are on
+a *local copy* of the project tree.
+
+There are only a handful of git commands which communicate over the network,
+including things like `clone`, `push`, `pull`, `fetch`, etc.
+
+This means you can work from *anywhere*, and not need to worry about
+synchronizing changes with remotes until you get back on the network.
+
+---
+
+# Remotes
+
+Because most operations are local, there is a notion of *remotes* to help you
+manage other copies of your local tree.
+
+When you `clone` a repository, it will not only fetch a copy of the tree, but
+also add a remote called *origin* which points back at the place you cloned
+from.
+
+This is why a common workflow is:
+
+    $ git clone git@some.remote.host:/path/to/repo
+    $ # work here
+    $ git push origin master
+
+Here, `origin` in the push command is actually a nicer name for
+`git@some.remote.host:/path/to/repo`
+
+You can have as many remotes as you like, but commonly you will just have
+*origin*, as it is created for you when you clone from, for example, GitHub.
+
+But what about that bit about `master`? That is a *branch*.

@@ -137,3 +137,166 @@ You can have as many remotes as you like, but commonly you will just have
 *origin*, as it is created for you when you clone from, for example, GitHub.
 
 But what about that bit about `master`? That is a *branch*.
+
+---
+
+# Branches
+
+A branch is just a pointer to a specific commit in your tree.
+
+When you make a new commit, the pointer for whatever branch you are currently
+on is updated to point to that new commit, but all other branch pointers are
+left alone.
+
+Typically there is at least one branch, called *master*, which is usually
+where the "release" version of your project (or equivalent) is.
+
+It is *very common* to branch away from master in git, typically to do work
+which may break master (i.e. just about anything).
+
+It is so common that hosting services like GitHub support a notion of
+"pull requests" between branches.
+
+---
+
+# Branches
+
+Let's say you are on branch "master" and have an initial commit "A"
+
+    $ git checkout master
+    $ git commit -m "A"
+
+    master
+    |
+    V
+    A
+
+---
+
+# Branches
+
+If you now commit something, you create commit "B", and "master" follows suit
+by updating to point to it:
+
+    $ git commit -m "B"
+
+        master
+        |
+        V
+    A<--B
+
+---
+
+# Branches
+
+You might now want to work on a new feature, but don't want to disturb "master"
+while you work on it. You might checkout a new branch called "feature", which
+will point to the same commit as "master" for the time being.
+
+    $ git checkout -b "feature" # the -b flag creates the branch as it checks it out
+
+        master
+        |
+        V
+    A<--B
+        ^
+        |
+        feature
+
+---
+
+# Branches
+
+If you now make a commit "C", you will update the "feature" branch, but not
+"master", even though they both share the same "B" commit.
+
+    $ git commit -m "C"
+
+        master
+        |
+        V
+    A<--B<--C
+            ^
+            |
+            feature
+
+---
+
+# Branches
+
+Now lets say there is a massive security vulnerability in your project, and
+you are are willing to throw all caution to the wind and make a hotfix on
+master to get it patched as soon as possible:
+
+    $ git checkout master
+    $ git commit -m "D"
+
+            master
+            |
+            V
+    A<--B<--D
+        ^
+        |
+        C
+        ^
+        |
+        feature
+
+---
+
+# Branches
+
+Now you go back to working on the feature:
+
+    $ git checkout feature
+    $ git commit -m "E"
+
+            master
+            |
+            V
+    A<--B<--D
+        ^
+        |
+        C<--E
+            ^
+            |
+            feature
+
+The two branches have now diverged, but share a common parent tree up to and
+including commit "B"
+
+---
+
+# Merging
+
+Now consider that your work on feature is complete and you want to *merge*
+it into master.
+
+    $ git checkout master
+    $ git merge --no-ff feature -m "F"
+
+                master and feature
+                |
+                V
+    A<--B<--D<--F
+        ^       |
+        |       |
+        C<--E<--+
+
+You create a *new* commit F which merges the changes made in both D *and* E
+
+---
+
+# Merging
+
+It is now safe to delete the feature branch, as it is the same as master:
+
+    $ git branch -d feature
+
+                master
+                |
+                V
+    A<--B<--D<--F
+        ^       |
+        |       |
+        C<--E<--+

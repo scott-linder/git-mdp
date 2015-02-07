@@ -92,13 +92,13 @@ There are three places where objects exist at any given time:
 
 You can move objects between these three stores in various ways:
 
-(Working Directory) (Staging Area) (Repository)
-        |               |               |
-        <-------------Checkout----------+
-        |               |               |
-        +-----Stage----->               |
-                        |               |
-                        +----Commit----->
+    (Working Directory) (Staging Area) (Repository)
+            |               |               |
+            <-------------Checkout----------+
+            |               |               |
+            +-----Stage----->               |
+                            |               |
+                            +----Commit----->
 
 ---
 

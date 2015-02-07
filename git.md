@@ -140,6 +140,17 @@ But what about that bit about `master`? That is a *branch*.
 
 ---
 
+# A remote example
+
+    $ git clone https://github.com/example/example
+    $ cd example
+    $ echo 'echo Hello git!' >> main.sh
+    $ git add main.sh
+    $ git commit -m "add main script"
+    $ git push origin master
+
+---
+
 # Branches
 
 A branch is just a pointer to a specific commit in your tree.

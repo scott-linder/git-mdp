@@ -409,6 +409,17 @@ to their parents by ASCII pipes.
 
 ---
 
+# A practical note: git from scratch
+
+You will need to install `git` and set a couple of configuration variables
+before making commits. On Ubuntu/Debian this will look something like:
+
+    $ sudo apt-get install git
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "your.email@example.com"
+
+---
+
 # This is a just an introduction
 
 There are still a great many more things you can do with git: I have only tried

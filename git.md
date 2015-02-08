@@ -102,6 +102,31 @@ You can move objects between these three stores in various ways:
 
 ---
 
+# Objects and Commits
+
+When you make changes in your working directory, stage them, and commit them
+you lock the content into immutable *objects* with some meta-data in a *commit
+**object*.
+
+Because objects are *immutable*, they can be identified by a *SHA hash* of
+their contents.
+
+All commit objects (except for the root or "initial" commit) have at least
+one *parent*.
+
+Objects are never "modified" or "destroyed", only forgotten. Any operation
+which appears to alter or destroy commits (e.g. changes their contents
+or removes them completely) is actually just *replacing* them with a *new*
+commit.
+
+It is *always* possible to recover a commit.
+
+*Note:* This is true in a theoretical sense, but for practical reasons there is
+actually a garbage collector which runs once a month to clean up unreachable
+objects.
+
+---
+
 # Distributed
 
 Git is *distributed*, which means that most of the operations you do are on

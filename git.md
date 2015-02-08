@@ -373,6 +373,26 @@ It is now safe to delete the feature branch, as it is the same as master:
 
 ---
 
+# HEAD
+
+So, branches point to commits.
+
+But how does git know what branch you are working on?
+
+Then answer is: *HEAD*
+
+HEAD is another pointer, which represents where you are currently working.
+
+HEAD typically points to a branch, but it can also point directly to a commit
+(in which case it is said to be "detached", which is useful in some cases).
+
+If you ever think you have lost a commit, *don't panic*: use `git reflog`
+
+The `reflog` is a list of all the places HEAD has pointed recently; it is useful
+when you want to recover a commit that has "disappeared"
+
+---
+
 # This is a just an introduction
 
 There are still a great many more things you can do with git: I have only tried

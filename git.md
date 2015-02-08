@@ -378,8 +378,8 @@ It is now safe to delete the feature branch, as it is the same as master:
 There are still a great many more things you can do with git: I have only tried
 to cover some of the essentials.
 
-There are a number of great resources, including the [official website][2]
-, [cheat sheets][3], and just the man pages.
+There are a number of great resources, including the [official website][2],
+[cheat sheets][3], and just the man pages.
 
 Note: for a given command, the man page for it has a prefix of "git-", e.g.:
 

@@ -393,6 +393,22 @@ when you want to recover a commit that has "disappeared"
 
 ---
 
+# A practical note: log
+
+The default configuration of `git log` is *garbage*.
+
+To see a graphical representation of your tree, add an alias such as:
+
+    $ git config --global alias.l 'log --oneline --graph --decorate'
+
+Then, run `git l`
+
+The root of your tree will be at the bottom, branches, HEAD, and tags will
+appear on the commits which they reference, and commits will be connected
+to their parents by ASCII pipes.
+
+---
+
 # This is a just an introduction
 
 There are still a great many more things you can do with git: I have only tried

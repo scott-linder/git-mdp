@@ -96,7 +96,7 @@ You can move objects between these three stores in various ways:
             |               |               |
             <-------------Checkout----------+
             |               |               |
-            +-----Stage----->               |
+            +------Add------>               |
                             |               |
                             +----Commit----->
 

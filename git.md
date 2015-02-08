@@ -90,6 +90,40 @@ There are three places where objects exist at any given time:
 * The *cache/index* (where you stage changes to be committed)
 * The *repository* (committed revisions)
 
+---
+
+# The three stores
+
+You can move objects between these three stores in various ways:
+
+    (Working Directory) (Staging Area) (Repository)
+
+---
+
+# The three stores
+
+You can move objects between these three stores in various ways:
+
+    (Working Directory) (Staging Area) (Repository)
+            |                               |
+            <-------------Checkout----------+
+
+---
+
+# The three stores
+
+You can move objects between these three stores in various ways:
+
+    (Working Directory) (Staging Area) (Repository)
+            |               |               |
+            <-------------Checkout----------+
+            |               |
+            +------Add------>
+
+---
+
+# The three stores
+
 You can move objects between these three stores in various ways:
 
     (Working Directory) (Staging Area) (Repository)

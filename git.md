@@ -22,7 +22,7 @@ network connection.
 
 ---
 
-# Why is useful?
+# Why is it useful?
 
 Also phrased as "I just make a new copy of my project directory when I want to
 save a version".

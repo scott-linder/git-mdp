@@ -399,7 +399,7 @@ The default configuration of `git log` is *garbage*.
 
 To see a graphical representation of your tree, add an alias such as:
 
-    $ git config --global alias.l 'log --oneline --graph --decorate'
+    $ git config --global alias.l 'log --oneline --graph --decorate --all'
 
 Then, run `git l`
 
